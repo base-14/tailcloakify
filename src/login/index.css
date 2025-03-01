@@ -90,6 +90,12 @@ html {
   .kcInputClass {
     @apply focus:border;
   }
+  .pf-c-button.pf-m-primary {
+    @apply bg-primary text-primary-foreground;
+  }
+  a.text-primary:hover {
+    @apply text-primary/80;
+  }
 }
 
 .separate {

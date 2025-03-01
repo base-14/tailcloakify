@@ -63,7 +63,7 @@ export default function LoginResetPassword(
                             name="username"
                             className={clsx(
                                 kcClsx("kcInputClass"),
-                                "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                "block shadow-sm transition-colors border border-input mt-1 rounded-md w-full placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                             )}
                             autoFocus
                             defaultValue={auth.attemptedUsername ?? ""}
@@ -85,7 +85,7 @@ export default function LoginResetPassword(
                     <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")}>
                         <div className={kcClsx("kcFormOptionsWrapperClass")}>
                             <span>
-                                <a className={"no-underline hover:no-underline text-secondary-600 text-sm"} href={url.loginUrl}>
+                                <a className={"text-primary hover:text-primary/90 inline-flex no-underline hover:no-underline"} href={url.loginUrl}>
                                     {msg("backToLogin")}
                                 </a>
                             </span>
@@ -96,7 +96,7 @@ export default function LoginResetPassword(
                         <input
                             className={clsx(
                                 kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                "bg-primary text-primary-foreground shadow hover:bg-primary/90 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-4 py-2 w-full"
                             )}
                             type="submit"
                             value={msgStr("doSubmit")}

@@ -70,7 +70,7 @@ export default function Register(props: RegisterProps) {
                                 className={clsx(
                                     kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
                                     "g-recaptcha",
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full"
                                 )}
                                 data-sitekey={recaptchaSiteKey}
                                 data-callback={() => {
@@ -88,7 +88,7 @@ export default function Register(props: RegisterProps) {
                                 disabled={!isFormSubmittable || (termsAcceptanceRequired && !areTermsAccepted)}
                                 className={clsx(
                                     kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonBlockClass", "kcButtonLargeClass"),
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full"
                                 )}
                                 type="submit"
                                 value={msgStr("doRegister")}
@@ -105,7 +105,7 @@ export default function Register(props: RegisterProps) {
             </div>
             <div className={"text-center"}>
                 <span>
-                    <a className={"no-underline hover:no-underline text-secondary-600 text-sm"} href={url.loginUrl}>
+                    <a className={"text-primary hover:text-primary/90 inline-flex no-underline hover:no-underline"} href={url.loginUrl}>
                         {msg("backToLogin")}
                     </a>
                 </span>
@@ -139,7 +139,7 @@ function TermsAcceptance(props: {
                         type="checkbox"
                         id="termsAccepted"
                         name="termsAccepted"
-                        className="accent-primary-600"
+                        className="rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
                         checked={areTermsAccepted}
                         onChange={e => onAreTermsAcceptedValueChange(e.target.checked)}
                         aria-invalid={messagesPerField.existsError("termsAccepted")}
