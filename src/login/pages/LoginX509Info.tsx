@@ -63,7 +63,7 @@ export default function LoginX509Info(props: PageProps<Extract<KcContext, { page
                         <div className={clsx(kcClsx("kcFormButtonsWrapperClass"), "grid grid-cols-2 gap-10")}>
                             <input
                                 className={
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 px-4 py-2 max-w-md"
                                 }
                                 name="login"
                                 id="kc-login"
@@ -73,7 +73,7 @@ export default function LoginX509Info(props: PageProps<Extract<KcContext, { page
                             {x509.formData.isUserEnabled && (
                                 <input
                                     className={
-                                        "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                        "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow hover:bg-secondary/90 px-4 py-2 max-w-md"
                                     }
                                     name="cancel"
                                     id="kc-cancel"

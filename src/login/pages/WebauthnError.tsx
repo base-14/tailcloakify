@@ -28,39 +28,39 @@ export default function WebauthnError(props: PageProps<Extract<KcContext, { page
                 <input type="hidden" id="executionValue" name="authenticationExecution" />
                 <input type="hidden" id="isSetRetry" name="isSetRetry" />
             </form>
-                <input
-                    tabIndex={4}
-                    onClick={() => {
-                        // @ts-expect-error: Trusted Keycloak's code
-                        document.getElementById("isSetRetry").value = "retry";
-                        // @ts-expect-error: Trusted Keycloak's code
-                        document.getElementById("executionValue").value = "${execution}";
-                        // @ts-expect-error: Trusted Keycloak's code
-                        document.getElementById("kc-error-credential-form").submit();
-                    }}
-                    type="button"
-                    className={
-                        "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
-                    }
-                    name="try-again"
-                    id="kc-try-again"
-                    value={msgStr("doTryAgain")}
-                />
-                {isAppInitiatedAction && (
-                    <form action={url.loginAction} className={kcClsx("kcFormClass")} id="kc-webauthn-settings-form" method="post">
-                        <button
-                            type="submit"
-                            className={
-                                "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
-                            }
-                            id="cancelWebAuthnAIA"
-                            name="cancel-aia"
-                            value="true"
-                        >
-                            {msgStr("doCancel")}
-                        </button>
-                    </form>
-                )}
+            <input
+                tabIndex={4}
+                onClick={() => {
+                    // @ts-expect-error: Trusted Keycloak's code
+                    document.getElementById("isSetRetry").value = "retry";
+                    // @ts-expect-error: Trusted Keycloak's code
+                    document.getElementById("executionValue").value = "${execution}";
+                    // @ts-expect-error: Trusted Keycloak's code
+                    document.getElementById("kc-error-credential-form").submit();
+                }}
+                type="button"
+                className={
+                    "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 px-4 py-2 w-full"
+                }
+                name="try-again"
+                id="kc-try-again"
+                value={msgStr("doTryAgain")}
+            />
+            {isAppInitiatedAction && (
+                <form action={url.loginAction} className={kcClsx("kcFormClass")} id="kc-webauthn-settings-form" method="post">
+                    <button
+                        type="submit"
+                        className={
+                            "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow hover:bg-secondary/90 px-4 py-2 max-w-md"
+                        }
+                        id="cancelWebAuthnAIA"
+                        name="cancel-aia"
+                        value="true"
+                    >
+                        {msgStr("doCancel")}
+                    </button>
+                </form>
+            )}
         </Template>
     );
 }

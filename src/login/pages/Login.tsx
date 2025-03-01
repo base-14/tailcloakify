@@ -232,7 +232,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             </div>
                         </form>
                     )}
-                    {/*<div className={"pt-4 separate text-secondary-600 text-sm"}>Or sign in with</div>*/}
+                    {/*<div className={"pt-4 separate text-secondary text-sm"}>Or sign in with</div>*/}
                     {/*<div className={"gap-4 grid grid-cols-3"}></div>*/}
                 </div>
             </div>
@@ -260,7 +260,7 @@ function PasswordWrapper(props: { kcClsx: KcClsx; i18n: I18n; passwordInputId: s
             {children}
             <button
                 type="button"
-                className={"absolute text-secondary-400 right-3 top-1 text-xl"}
+                className={"absolute text-secondary/80 right-3 top-1 text-xl"}
                 aria-label={msgStr(isPasswordRevealed ? "hidePassword" : "showPassword")}
                 aria-controls={passwordInputId}
                 onClick={toggleIsPasswordRevealed}

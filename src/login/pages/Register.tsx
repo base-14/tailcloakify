@@ -99,7 +99,7 @@ export default function Register(props: RegisterProps) {
             </form>
             <div className={"text-left mt-5"}>
                 <span>
-                    <span className="required: text-secondary-600 text-sm">* </span>
+                    <span className="required: text-secondary text-sm">* </span>
                     {msg("requiredFields")}
                 </span>
             </div>

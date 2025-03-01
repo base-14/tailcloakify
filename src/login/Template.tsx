@@ -23,7 +23,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         i18n,
         doUseDefaultCss,
         classes,
-        children,
+        children
     } = props;
 
     const { kcClsx } = getKcClsx({ doUseDefaultCss, classes });
@@ -36,7 +36,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         document.title = documentTitle ?? msgStr("loginTitle", kcContext.realm.displayName);
     }, []);
 
-    // Load Favicon 
+    // Load Favicon
     useEffect(() => {
         const url: string | undefined = advancedMsgStr("faviconUrl") || kcContext.properties.TAILCLOAKIFY_FAVICON_URL;
 
@@ -82,7 +82,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         }
 
         Promise.all(promisses).then(() => {
-            if (window.CookieConsent === undefined && kcContext.properties["TAILCLOAKIFY_FOOTER_ORESTBIDACOOKIECONSENT"]) useSetCookieConsent(kcContext, i18n);
+            if (window.CookieConsent === undefined && kcContext.properties["TAILCLOAKIFY_FOOTER_ORESTBIDACOOKIECONSENT"])
+                useSetCookieConsent(kcContext, i18n);
         });
     }, []);
 
@@ -91,7 +92,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         function loadStyle(href: string) {
             const elem = document.createElement("link");
             elem.href = href;
-            elem.rel = 'stylesheet';
+            elem.rel = "stylesheet";
             document.head.appendChild(elem);
         }
 
@@ -108,7 +109,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     // Load Meta
     useEffect(() => {
-        function loadMeta(input: { name: string, content: string }) {
+        function loadMeta(input: { name: string; content: string }) {
             const elem = document.createElement("meta");
             elem.name = input.name;
             elem.content = input.content;
@@ -117,13 +118,13 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
         if (kcContext.properties["TAILCLOAKIFY_ADDITIONAL_META"]) {
             const metaStrings = kcContext.properties["TAILCLOAKIFY_ADDITIONAL_META"].split(";"); // Split the semicolon by space & ==
-            const metaRows = metaStrings.map(e => ({ name: e.split("==")[0], content: e.split("==")[1] }))
+            const metaRows = metaStrings.map(e => ({ name: e.split("==")[0], content: e.split("==")[1] }));
             metaRows.forEach(loadMeta);
         }
 
         if (kcContext.properties["meta"]) {
             const metaStrings = kcContext.properties["meta"].split(" "); // Split the entries by space & ==
-            const metaRows = metaStrings.map(e => ({ name: e.split("==")[0], content: e.split("==")[1] }))
+            const metaRows = metaStrings.map(e => ({ name: e.split("==")[0], content: e.split("==")[1] }));
             metaRows.forEach(loadMeta);
         }
     }, []);
@@ -139,7 +140,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     });
 
     const footerImprintUrl = advancedMsgStr("footerImprintUrl") !== "footerImprintUrl" ? advancedMsgStr("footerImprintUrl") : null;
-    const footerDataprotectionUrl = advancedMsgStr("footerDataprotectionUrl") !== "footerDataprotectionUrl" ? advancedMsgStr("footerDataprotectionUrl") : null;
+    const footerDataprotectionUrl =
+        advancedMsgStr("footerDataprotectionUrl") !== "footerDataprotectionUrl" ? advancedMsgStr("footerDataprotectionUrl") : null;
 
     const backgroundLogoUrl = advancedMsgStr("backgroundLogoUrl") !== "backgroundLogoUrl" ? advancedMsgStr("backgroundLogoUrl") : null;
     const backgroundVideoUrl = advancedMsgStr("backgroundVideoUrl") !== "backgroundVideoUrl" ? advancedMsgStr("backgroundVideoUrl") : null;
@@ -154,7 +156,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         <div
             className={clsx(
                 kcClsx("kcLoginClass"),
-                "bg-secondary-100 flex flex-col items-center justify-center min-h-screen sm:py-16 overflow-x-hidden"
+                "bg-secondary/50 flex flex-col items-center justify-center min-h-screen sm:py-16 overflow-x-hidden"
             )}
         >
             <div id="kc-header">
@@ -173,10 +175,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                         playsInline={true}
                         className={"fixed top-0 left-0 right-0 bottom-0 min-h-full min-w-full opacity-20 max-w-none"}
                     >
-                        <source
-                            src={backgroundVideoUrl || kcContext.properties["TAILCLOAKIFY_BACKGROUND_VIDEO_URL"]}
-                            type="video/mp4"
-                        />
+                        <source src={backgroundVideoUrl || kcContext.properties["TAILCLOAKIFY_BACKGROUND_VIDEO_URL"]} type="video/mp4" />
                     </video>
                 )}
             </div>
@@ -276,7 +275,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 <section className={"flex flex-col ml-5"}>
                     {(footerImprintUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_IMPRINT_URL"]) && (
                         <a
-                            className={"text-secondary-600 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
+                            className={"text-secondary/80 hover:text-secondary text-sm inline-flex no-underline hover:no-underline"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}
                             href={footerImprintUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_IMPRINT_URL"]}
@@ -286,7 +285,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     )}
                     {(footerDataprotectionUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_DATAPROTECTION_URL"]) && (
                         <a
-                            className={"text-secondary-600 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
+                            className={"text-secondary/80 hover:text-secondary text-sm inline-flex no-underline hover:no-underline"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}
                             href={footerDataprotectionUrl || kcContext.properties["TAILCLOAKIFY_FOOTER_DATAPROTECTION_URL"]}
@@ -296,7 +295,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     )}
                     {kcContext.properties["TAILCLOAKIFY_FOOTER_ORESTBIDACOOKIECONSENT"] && (
                         <a
-                            className={"text-secondary-600 hover:text-secondary-900 text-sm inline-flex no-underline hover:no-underline"}
+                            className={"text-secondary/80 hover:text-secondary text-sm inline-flex no-underline hover:no-underline"}
                             target={"_blank"}
                             rel={"noopener noreferrer"}
                             type={"button"}
