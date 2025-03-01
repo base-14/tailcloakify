@@ -31,7 +31,7 @@ export default function LoginVerifyEmail(
                 <p className={"instruction"}>
                     {msg("emailVerifyInstruction2")}
                     <br />
-                    <a className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"} href={url.loginAction}>
+                    <a className={"text-primary hover:text-primary/90 inline-flex no-underline hover:no-underline"} href={url.loginAction}>
                         {msg("doClickHere")}
                     </a>
                     &nbsp;

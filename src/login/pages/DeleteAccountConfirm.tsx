@@ -49,7 +49,7 @@ export default function DeleteAccountConfirm(
                     <input
                         className={clsx(
                             kcClsx("kcButtonClass", "kcButtonPrimaryClass", "kcButtonLargeClass"),
-                            "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                            "shadow-sm transition-colors border border-input mt-1 rounded-md w-full placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                         )}
                         type="submit"
                         value={msgStr("doConfirmDelete")}
@@ -57,7 +57,7 @@ export default function DeleteAccountConfirm(
                     {triggered_from_aia && (
                         <button
                             className={
-                                "rounded-md bg-secondary-600 text-white focus:ring-secondary-600 hover:bg-secondary-700 px-4 py-2 text-sm max-w-md focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full"
                             }
                             type="submit"
                             name="cancel-aia"

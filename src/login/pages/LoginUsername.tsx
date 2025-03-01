@@ -40,7 +40,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                             <a
                                 tabIndex={8}
                                 href={url.registrationUrl}
-                                className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
+                                className={"text-primary hover:text-primary/90 inline-flex no-underline hover:no-underline"}
                             >
                                 {msg("doRegister")}
                             </a>
@@ -112,22 +112,22 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                         {!realm.loginWithEmailAllowed
                                             ? msg("username")
                                             : !realm.registrationEmailAsUsername
-                                                ? msg("usernameOrEmail")
-                                                : msg("email")}
+                                              ? msg("usernameOrEmail")
+                                              : msg("email")}
                                     </label>
                                     <input
                                         placeholder={
                                             !realm.loginWithEmailAllowed
                                                 ? msgStr("username")
                                                 : !realm.registrationEmailAsUsername
-                                                    ? msgStr("usernameOrEmail")
-                                                    : msgStr("email")
+                                                  ? msgStr("usernameOrEmail")
+                                                  : msgStr("email")
                                         }
                                         tabIndex={2}
                                         id="username"
                                         className={clsx(
                                             kcClsx("kcInputClass"),
-                                            "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                            "block shadow-sm transition-colors border border-input mt-1 rounded-md w-full placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                                         )}
                                         name="username"
                                         defaultValue={login.username ?? ""}
@@ -159,7 +159,9 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                                     id="rememberMe"
                                                     name="rememberMe"
                                                     type="checkbox"
-                                                    className={"accent-primary-600"}
+                                                    className={
+                                                        "rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+                                                    }
                                                     defaultChecked={!!login.rememberMe}
                                                 />{" "}
                                                 {msg("rememberMe")}
@@ -174,7 +176,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                     tabIndex={4}
                                     disabled={isLoginButtonDisabled}
                                     className={
-                                        "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                        "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full"
                                     }
                                     name="login"
                                     id="kc-login"

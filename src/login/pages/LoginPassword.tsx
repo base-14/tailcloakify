@@ -54,7 +54,7 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                                     id="password"
                                     className={clsx(
                                         kcClsx("kcInputClass"),
-                                        "block focus:outline-none border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
+                                        "block shadow-sm transition-colors border border-input mt-1 rounded-md w-full placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
                                     )}
                                     name="password"
                                     type="password"
@@ -83,8 +83,9 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                                         <a
                                             tabIndex={5}
                                             href={url.loginResetCredentialsUrl}
-                                            className={"text-primary-600 hover:text-primary-500 inline-flex no-underline hover:no-underline"}
-                                        ><br/>
+                                            className={"text-primary hover:text-primary/90 inline-flex no-underline hover:no-underline"}
+                                        >
+                                            <br />
                                             {msg("doForgotPassword")}
                                         </a>
                                     </span>
@@ -95,7 +96,7 @@ export default function LoginPassword(props: PageProps<Extract<KcContext, { page
                             <input
                                 tabIndex={4}
                                 className={
-                                    "rounded-md bg-primary-600 text-white focus:ring-primary-600 hover:bg-primary-700 px-4 py-2 text-sm flex justify-center relative w-full focus:outline-none focus:ring-2 focus:ring-offset-2"
+                                    "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 w-full"
                                 }
                                 name="login"
                                 id="kc-login"
