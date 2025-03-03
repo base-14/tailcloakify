@@ -53,7 +53,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                     {realm.password && social?.providers !== undefined && social.providers.length !== 0 && (
                         <div id="kc-social-providers" className={kcClsx("kcFormSocialAccountSectionClass")}>
                             <hr />
-                            <h2 className={"pt-4 separate text-secondary text-sm"}>{msg("identity-provider-login-label")}</h2>
+                            <h2 className={"pt-4 separate text-secondary-foreground text-sm"}>{msg("identity-provider-login-label")}</h2>
                             <ul
                                 className={clsx(
                                     kcClsx("kcFormSocialAccountListClass", social.providers.length > 3 && "kcFormSocialAccountListGridClass"),
@@ -66,7 +66,7 @@ export default function LoginUsername(props: PageProps<Extract<KcContext, { page
                                             id={`social-${p.alias}`}
                                             className={clsx(
                                                 kcClsx("kcFormSocialAccountListButtonClass", providers.length > 3 && "kcFormSocialAccountGridItem"),
-                                                `border border-secondary/50 flex justify-center py-2 rounded-lg hover:border-opacity-30 hover:bg-provider-${p.alias}/10`
+                                                `border border-border flex justify-center py-2 rounded-lg hover:bg-secondary hover:bg-provider-${p.alias}/10`
                                             )}
                                             type="button"
                                             href={p.loginUrl}

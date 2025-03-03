@@ -70,7 +70,7 @@ export default function WebauthnRegister(
                     <button
                         type="submit"
                         className={
-                            "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow hover:bg-secondary/90 px-4 py-2 w-full"
+                            "items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-secondary disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground shadow hover:bg-secondary/80 px-4 py-2 w-full"
                         }
                         id="cancelWebAuthnAIA"
                         name="cancel-aia"

@@ -115,7 +115,7 @@ export default function LoginOtp(props: PageProps<Extract<KcContext, { pageId: "
                             Please Input your {msg("loginOtpOneTime")}
                         </label>
                     </div>
-                    <div className={kcClsx("kcInputWrapperClass")} id={"inputs"}>
+                    <div className={clsx(kcClsx("kcInputWrapperClass"), "text-center")} id={"inputs"}>
                         <div className={"flex justify-center items-center"}>
                             {Array.from({ length: otpLength }).map((_, index) => (
                                 <input

@@ -132,7 +132,7 @@ export default function LoginConfigTotp(
                             </label>{" "}
                             <span className="required">*</span>
                         </div>
-                        <div className={kcClsx("kcInputWrapperClass")}>
+                        <div className={clsx(kcClsx("kcInputWrapperClass"), "text-center")}>
                             <input
                                 type="text"
                                 id="totp"
@@ -240,7 +240,7 @@ function LogoutOtherSessions(props: { kcClsx: KcClsx; i18n: I18n }) {
         <div id="kc-form-options" className={kcClsx("kcFormOptionsClass")}>
             <div className={kcClsx("kcFormOptionsWrapperClass")}>
                 <div className="checkbox">
-                    <label className={"ml-2 text-secondary text-sm"}>
+                    <label className={"ml-2 text-secondary-foreground text-sm"}>
                         <input
                             type="checkbox"
                             className={

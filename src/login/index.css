@@ -93,8 +93,18 @@ html {
   .pf-c-button.pf-m-primary {
     @apply bg-primary text-primary-foreground;
   }
+  .pf-c-button.pf-m-link {
+    @apply text-primary hover:text-primary/80;
+  }
   a.text-primary:hover {
     @apply text-primary/80;
+  }
+
+  .otp-input {
+    @apply w-12 h-14 border-2 border-secondary rounded-lg m-0.5 text-center text-3xl cursor-pointer;
+  }
+  .otp-input:focus {
+    @apply border-primary rounded-lg outline-none;
   }
 }
 
@@ -134,21 +144,6 @@ html {
 /* visible */
 .show--consent #cc-main .cc--anim .cm.cm--box {
   transform: scale(1) !important;
-}
-
-.otp-input {
-  width: 45px;
-  border: 3px solid gray;
-  border-radius: 8px;
-  margin: 0 10px;
-  text-align: center;
-  font-size: 36px;
-  cursor: pointer;
-}
-
-.otp-input:focus {
-  border: 3px solid skyblue;
-  outline: none;
 }
 
 .kcLocaleListClass {

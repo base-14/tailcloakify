@@ -23,7 +23,11 @@ export default function Error(props: PageProps<Extract<KcContext, { pageId: "err
                 <p className="instruction" dangerouslySetInnerHTML={{ __html: kcSanitize(message.summary) }} />
                 {!skipLink && client !== undefined && client.baseUrl !== undefined && (
                     <p className={"text-center"}>
-                        <a id="backToApplication" href={client.baseUrl} className={"no-underline hover:no-underline text-secondary text-sm"}>
+                        <a
+                            id="backToApplication"
+                            href={client.baseUrl}
+                            className={"no-underline hover:no-underline text-primary hover:text-primary/90 text-sm"}
+                        >
                             {msg("backToApplication")}
                         </a>
                     </p>
